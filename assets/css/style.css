@@ -1,0 +1,76 @@
+body {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../images/background.jpg);
+	background-position: center;
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 6vh;
+}
+
+h2 {
+	font-size: 4vh;
+}
+
+h1, h2 {
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+}
+
+#overlayText {
+	position: absolute;
+	width: 100%;
+	height: calc(8vh + 48px);
+	top: 50vh;
+	margin-top: calc(-25vh + 4vh + 24px);
+}
+
+#logo {
+	width: 100%;
+}
+
+input {
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.btn-custom {
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+	background-color: #007bff;
+	border-color: #007bff;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5);
+}
+
+.btn-custom:hover {
+	background-color: #76B33E;
+	border-color: #76B33E;
+}
+
+#navMenu {
+	position: absolute;
+	top: calc(100vh - 80px);
+	background-color: #007bff;
+	height: 80px;
+	width: 100%;
+	font-size: 20px;
+	-moz-box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
+	box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+#navMenu a {
+	font-weight: bold;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+	transition: all 0.3s;
+}
+
+#navMenu a:hover {
+	color: #9EF054;
+}

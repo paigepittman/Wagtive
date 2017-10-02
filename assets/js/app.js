@@ -12,4 +12,7 @@ $(document).ready(function(){
 
 	const db = firebase.database();
 
+	$("#signIn").on("click", function(event){
+		event.preventDefault();
+	})
 })
