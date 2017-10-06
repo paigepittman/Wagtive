@@ -4,20 +4,22 @@ body {
 	background-image: url(../images/background.jpg);
 	background-position: center;
 	background-attachment: fixed;
+	font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
-	font-size: 6vh;
+	font-size: 7vh;
+	font-weight: bold;
 }
 
 h2 {
 	font-size: 4vh;
+	font-weight: lighter;
 }
 
 h1, h2 {
-	font-weight: bold;
 	color: white;
-	text-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
 #overlayText {
@@ -33,18 +35,26 @@ h1, h2 {
 }
 
 input {
-	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	height: 30px;
+	font-size: 14px;
+}
+
+.form-control::placeholder {
+	font-size: 11px;
 }
 
 .btn-custom {
 	color: #fff;
 	cursor: pointer;
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-	background-color: #007bff;
-	border-color: #007bff;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5);
+	background-color: #0D90E6;
+	border-color: #0D90E6;
+	border-radius: .5rem;
+}
+
+#signIn {
+	background-color: transparent;
+	color: #0D90E6;
+	border: 0;
 }
 
 .btn-custom:hover {
@@ -55,22 +65,15 @@ input {
 #navMenu {
 	position: absolute;
 	top: calc(100vh - 80px);
-	background-color: #007bff;
 	height: 80px;
 	width: 100%;
-	font-size: 20px;
-	-moz-box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
-	-webkit-box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
-	box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5);
 }
 
 #navMenu a {
-	font-weight: bold;
 	color: white;
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	transition: all 0.3s;
 }
 
 #navMenu a:hover {
-	color: #9EF054;
+	color: #0D90E6;
 }

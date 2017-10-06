@@ -1,0 +1,133 @@
+img {
+	width: 100%;
+}
+
+input {
+	height: 30px;
+	font-size: 14px;
+}
+
+label {
+	color: #868e96;
+	font-size: 14px;
+}
+
+h2 {
+	color: #868e96;
+	font-size: 4vh;
+}
+
+#saveProfile {
+	margin-right: -15px;
+}
+
+#stats {
+	color: #868e96;
+	font-size: 13px;
+}
+
+#startActivity {
+	background-color: transparent;
+	color: #0D90E6;
+	border: 0;
+	line-height: 20px;
+	font-size: 13px;
+}
+
+#startActivity i {
+	background-color: transparent;
+	color: #76B33E;
+	line-height: 20px;
+	font-size: 20px;
+	border: 0;
+}
+
+#progressOut {
+	background: white;
+	border: 1px solid #000;
+	width: 100%;
+	height: 30px;
+}
+
+#progressIn {
+	background: #76B33E;
+	width: calc(50% - 2px);
+	height: 28px;
+}
+
+.form-control::placeholder {
+	font-size: 11px;
+}
+
+.custom-file-control:empty::after {
+	content: "Choose file...";
+	font-size: 11px;
+}
+
+.custom-file-control::before {
+	content: "Browse";
+}
+
+.custom-file-control::before {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	z-index: 6;
+	display: block;
+	height: 2.5rem;
+	padding: .5rem 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #e9ecef;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 0 .25rem .25rem 0;
+}
+
+#llogo {
+	width: 100%;
+}
+
+#lnavMenu {
+	background-color: #0D90E6;
+	height: 70px;
+}
+
+#lnavMenu a {
+	color: white;
+	transition: all 0.3s;
+}
+
+.breadcrumb {
+	background-color: transparent;
+}
+
+.breadcrumb-item {
+	color: #0D90E6;
+}
+
+.btn-custom {
+	color: white;
+	cursor: pointer;
+	background-color: #0D90E6;
+	border-color: #0D90E6;
+	border-radius: .5rem;
+}
+
+.btn-custom:hover {
+	background-color: #76B33E;
+	border-color: #76B33E;
+}
+
+#lnavMenuBottom {
+	position: absolute;
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+	background-color: #0D90E6
+}
+
+#lnavMenuBottom a {
+	color: white;
+	transition: all 0.3s;
+}
