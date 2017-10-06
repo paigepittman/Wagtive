@@ -17,6 +17,55 @@ h2 {
 	font-size: 4vh;
 }
 
+.form-control::placeholder {
+	font-size: 11px;
+}
+
+.custom-file-control:empty::after {
+	content: "Choose file...";
+	font-size: 11px;
+}
+
+.custom-file-control::before {
+	content: "Browse";
+}
+
+.custom-file-control::before {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	z-index: 6;
+	display: block;
+	height: 2.5rem;
+	padding: .5rem 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #e9ecef;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 0 .25rem .25rem 0;
+}
+
+.breadcrumb {
+	background-color: transparent;
+}
+
+.breadcrumb-item {
+	color: #0D90E6;
+}
+
+.btn-custom {
+	color: white;
+	background-color: #0D90E6;
+	border-color: #0D90E6;
+	border-radius: .5rem;
+}
+
+.btn-custom:hover {
+	background-color: #76B33E;
+	border-color: #76B33E;
+}
+
 #saveProfile {
 	margin-right: -15px;
 }
@@ -25,6 +74,7 @@ h2 {
 	border: 1px solid #dadadb;
 	border-radius: .5rem;
 }
+
 #stats {
 	color: #868e96;
 	font-size: 13px;
@@ -57,35 +107,6 @@ h2 {
 	height: 28px;
 }
 
-.form-control::placeholder {
-	font-size: 11px;
-}
-
-.custom-file-control:empty::after {
-	content: "Choose file...";
-	font-size: 11px;
-}
-
-.custom-file-control::before {
-	content: "Browse";
-}
-
-.custom-file-control::before {
-	position: absolute;
-	top: -1px;
-	right: -1px;
-	bottom: -1px;
-	z-index: 6;
-	display: block;
-	height: 2.5rem;
-	padding: .5rem 1rem;
-	line-height: 1.5;
-	color: #495057;
-	background-color: #e9ecef;
-	border: 1px solid rgba(0,0,0,.15);
-	border-radius: 0 .25rem .25rem 0;
-}
-
 #llogo {
 	width: 100%;
 }
@@ -97,26 +118,5 @@ h2 {
 
 #lnavMenu a {
 	color: white;
-	transition: all 0.3s;
-}
-
-.breadcrumb {
-	background-color: transparent;
-}
-
-.breadcrumb-item {
-	color: #0D90E6;
-}
-
-.btn-custom {
-	color: white;
-	cursor: pointer;
-	background-color: #0D90E6;
-	border-color: #0D90E6;
-	border-radius: .5rem;
-}
-
-.btn-custom:hover {
-	background-color: #76B33E;
-	border-color: #76B33E;
+	/*transition: all 0.3s;*/
 }

@@ -22,21 +22,21 @@ h1, h2 {
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
-#overlayText {
-	position: absolute;
-	width: 100%;
-	height: calc(8vh + 48px);
-	top: 50vh;
-	margin-top: calc(-25vh + 4vh + 24px);
-}
-
-#logo {
-	width: 100%;
-}
-
 input {
 	height: 30px;
 	font-size: 14px;
+}
+
+.modal-header, .modal-footer {
+	background-color: #0D90E6
+}
+
+.modal-footer {
+	padding: 15px 0 15px 0;
+}
+
+.form-group img {
+	width: 100%;
 }
 
 .form-control::placeholder {
@@ -51,15 +51,31 @@ input {
 	border-radius: .5rem;
 }
 
+.btn-custom:hover {
+	background-color: #76B33E;
+	border-color: #76B33E;
+}
+
+#signupModal {
+	color: #868e96;
+}
+
+#overlayText {
+	position: absolute;
+	width: 100%;
+	height: calc(8vh + 48px);
+	top: 50vh;
+	margin-top: calc(-25vh + 4vh + 24px);
+}
+
+#logo {
+	width: 100%;
+}
+
 #signIn {
 	background-color: transparent;
 	color: #0D90E6;
 	border: 0;
-}
-
-.btn-custom:hover {
-	background-color: #76B33E;
-	border-color: #76B33E;
 }
 
 #navMenu {
