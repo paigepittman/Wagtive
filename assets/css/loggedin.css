@@ -21,36 +21,38 @@ h2 {
 	margin-right: -15px;
 }
 
+#profileImage {
+	border: 1px solid #dadadb;
+	border-radius: .5rem;
+}
 #stats {
 	color: #868e96;
 	font-size: 13px;
 }
 
-#startActivity {
-	background-color: transparent;
-	color: #0D90E6;
-	border: 0;
-	line-height: 20px;
-	font-size: 13px;
+#stats .font-weight-bold {
+	font-size: 16px;
 }
 
-#startActivity i {
-	background-color: transparent;
-	color: #76B33E;
-	line-height: 20px;
-	font-size: 20px;
-	border: 0;
+#nameSpan {
+	font-size: 24px;
+}
+
+#startActivity {
+	font-size: 13px;
 }
 
 #progressOut {
 	background: white;
-	border: 1px solid #000;
+	border: 1px solid #868e96;
+	border-radius: .5rem;
 	width: 100%;
 	height: 30px;
 }
 
 #progressIn {
 	background: #76B33E;
+	border-radius: .5rem 0 0 .5rem;
 	width: calc(50% - 2px);
 	height: 28px;
 }
@@ -90,7 +92,7 @@ h2 {
 
 #lnavMenu {
 	background-color: #0D90E6;
-	height: 70px;
+	height: 50px;
 }
 
 #lnavMenu a {
@@ -117,17 +119,4 @@ h2 {
 .btn-custom:hover {
 	background-color: #76B33E;
 	border-color: #76B33E;
-}
-
-#lnavMenuBottom {
-	position: absolute;
-	bottom: 0;
-	height: 70px;
-	width: 100%;
-	background-color: #0D90E6
-}
-
-#lnavMenuBottom a {
-	color: white;
-	transition: all 0.3s;
 }

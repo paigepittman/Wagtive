@@ -15,27 +15,31 @@
 <body>
 	<div class="container-fluid">
 		<div class="row align-items-center justify-content-center" id="lnavMenu">
-			<div class="col-3">
-				<img id="llogo" src="assets/images/logo-wh.png" alt="Wagtive Logo">
-			</div>
-			<div class="col-6">
-				<ul class="nav nav-pills justify-content-end">
-					<li class="nav-item">
-						<a class="nav-link" href="home.html">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Leaderboard</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Activities</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Profile</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Logout</a>
-					</li>
-				</ul>
+			<div class="col-10">
+				<div class="row justify-content-between align-items-center">
+					<div class="col-2">
+						<img id="llogo" src="assets/images/logo-wh.png" alt="Wagtive Logo">
+					</div>
+					<div class="col-8">
+						<ul class="nav nav-pills justify-content-around">
+							<li class="nav-item">
+								<a class="nav-link" href="home.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="leaderboard.html">Leaderboard</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="activities.html">Activities</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row justify-content-center" id="mainContainer">
@@ -51,11 +55,11 @@
 				<form class="form col-5" id="updateProfileForm">
 					<div class="form-group row">
 					<label class="col-3 col-form-label" for="inputFName">First Name</label>
-					<input type="text" id="inputFName" class="form-control col-9" placeholder="e.g. John" required autofocus>
+					<input type="text" id="inputFName" class="form-control col-9" placeholder="John" required autofocus>
 					</div>
 					<div class="form-group row">
 					<label class="col-3 col-form-label" class="mt-3" for="inputLName">Last Name</label>
-					<input type="text" id="inputLName" class="form-control col-9" placeholder="e.g. Doe" required>
+					<input type="text" id="inputLName" class="form-control col-9" placeholder="Doe" required>
 					</div>
 					<div class="form-group row">
 					<label class="col-3 col-form-label" class="mt-3" for="inputEmail">Email address</label>
@@ -63,11 +67,11 @@
 					</div>
 					<div class="form-group row">
 					<label class="col-3 col-form-label" class="mt-3" for="inputPName">Pet Name</label>
-					<input type="text" id="inputPName" class="form-control col-9" placeholder="e.g. Buddy" required>
+					<input type="text" id="inputPName" class="form-control col-9" placeholder="Lassie" required>
 					</div>
 					<div class="form-group row">
 					<label class="col-3 col-form-label" class="mt-3" for="inputHTown">Home Town</label>
-					<input type="text" id="inputHTown" class="form-control col-9" placeholder="e.g. Los Angeles, CA" required>
+					<input type="text" id="inputHTown" class="form-control col-9" placeholder="Los Angeles, CA" required>
 					</div>
 					<div class="form-group row">
 					<label class="col-3 col-form-label" class="mt-3" for="file">Profile Image</label>
