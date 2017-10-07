@@ -3,7 +3,7 @@ $(document).ready(function() {
     // SIGN IN WITH EMAIL AND PASSWORD
 
     $("#signIn").on("click", e => {
-        event.preventDefault();
+        e.preventDefault();
         const email = $("#inputEmail").val().trim();
         const password = $("#inputPassword").val().trim();
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
     // REGISTER NEW USER WITH EMAIL AND PASSWORD
 
     $("#modalSignup").on("click", e => {
-        event.preventDefault();
+        e.preventDefault();
 
         firstName = $("#modalFName").val().trim();
         lastName = $("#modalLName").val().trim();
