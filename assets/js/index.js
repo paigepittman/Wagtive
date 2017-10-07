@@ -1,9 +1,11 @@
-// $(document).ready(function() {
-//     console.log('hi');
+$(document).ready(function() {
 
-//     if (userObj.loggedIn) {
-//     	location.replace('../Wagtive/home.html');
-//     }
+firebase.auth().onAuthStateChanged(user => {
+        // CHECK IF USER IS SIGNED IN
+        if (user) {
+            // CHECK IF SIGNED IN USERS EMAIL IS VERIFIED
+            location.replace('../Wagtive/home.html');
+        }
+    })
 
-//     console.log(userObj.userFirst)
-// })
+})
