@@ -1,18 +1,4 @@
 $(document).ready(function() {
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBH-OgVkuMyOaep8meq0FJD1RxavuIlXlY",
-        authDomain: "wagtive.firebaseapp.com",
-        databaseURL: "https://wagtive.firebaseio.com",
-        projectId: "wagtive",
-        storageBucket: "wagtive.appspot.com",
-        messagingSenderId: "248580578313"
-    };
-    firebase.initializeApp(config);
-
-
-    const db = firebase.database();
-    const auth = firebase.auth();
 
     // SIGN IN WITH EMAIL AND PASSWORD
 
@@ -33,12 +19,12 @@ $(document).ready(function() {
     $("#modalSignup").on("click", e => {
         event.preventDefault();
 
-        const firstName = $("#modalFName").val().trim();
-        const lastName = $("#modalLName").val().trim();
-        const email = $("#modalEmail").val().trim();
-        const password = $("#modalPassword").val().trim();
-        const hTown = $("#modalHTown").val().trim();
-        const petName = $("#modalPName").val().trim();
+        firstName = $("#modalFName").val().trim();
+        lastName = $("#modalLName").val().trim();
+        email = $("#modalEmail").val().trim();
+        password = $("#modalPassword").val().trim();
+        hTown = $("#modalHTown").val().trim();
+        petName = $("#modalPName").val().trim();
 
 
 
@@ -82,9 +68,9 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(user => {
         // CHECK IF USER IS SIGNED IN
         if (user) {
-            console.log(user)
             // CHECK IF SIGNED IN USERS EMAIL IS VERIFIED
             if (user.emailVerified) {
+
                 var uid = user.uid;
 
                 db.ref('users/' + uid).on('value', snapshot => {
@@ -96,26 +82,13 @@ $(document).ready(function() {
                     score = snapshot.val().score;
                     level = snapshot.val().level;
                 });
-
-                $("#push").on("click", function() {
-                    userScore += 1;
-
-                    db.ref('users/' + uid).update({
-                        score: userScore
-                    });
-
-                });
-
-
-
             } else {
 
                 console.log("email not verified");
             }
         } else {
 
-                console.log("not logged in");
-            }
+            console.log("not logged in");
+        }
     })
-
-});
+})
