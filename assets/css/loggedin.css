@@ -66,6 +66,16 @@ h2 {
 	border-color: #76B33E;
 }
 
+.dropdown-menu {
+	color: white;
+	background-color: #0D90E6;
+}
+
+.dropdown-item:hover {
+	color: white;
+	background-color: #08639f;
+}
+
 #saveProfile {
 	margin-right: -15px;
 }
