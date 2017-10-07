@@ -66,6 +66,20 @@ h2 {
 	border-color: #76B33E;
 }
 
+.dropdown-menu {
+	background-color: #fafafa;
+	font-size: 13px;
+}
+
+.dropdown-item {
+	color: #868e96;
+}
+
+.dropdown-item:hover {
+	color: white;
+	background-color: #aaa;
+}
+
 #saveProfile {
 	margin-right: -15px;
 }
@@ -116,7 +130,10 @@ h2 {
 	height: 50px;
 }
 
-#lnavMenu a {
+.nav-link {
 	color: white;
-	/*transition: all 0.3s;*/
+}
+
+.nav-link:hover {
+	color: white;
 }
