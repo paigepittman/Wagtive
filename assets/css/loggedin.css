@@ -67,13 +67,17 @@ h2 {
 }
 
 .dropdown-menu {
-	color: white;
-	background-color: #0D90E6;
+	background-color: #fafafa;
+	font-size: 13px;
+}
+
+.dropdown-item {
+	color: #868e96;
 }
 
 .dropdown-item:hover {
 	color: white;
-	background-color: #08639f;
+	background-color: #aaa;
 }
 
 #saveProfile {
@@ -126,7 +130,10 @@ h2 {
 	height: 50px;
 }
 
-#lnavMenu a {
+.nav-link {
 	color: white;
-	/*transition: all 0.3s;*/
+}
+
+.nav-link:hover {
+	color: white;
 }
