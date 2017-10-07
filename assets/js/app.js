@@ -14,11 +14,15 @@
     const db = firebase.database();
     const auth = firebase.auth();
 
-    var firstName;
-    var lastName;
-    var email;
-    var password;
-    var hTow;
-    var petName;
+    var userObj = {
 
-    var user;
+    };
+
+    userObj.userFirst;
+
+    var userLogIn;
+
+    var isLoggedIn = false;
+
+    var checkLogIn;
+

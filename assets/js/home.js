@@ -1,21 +1,24 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    firebase.auth().onAuthStateChanged(user => {
+//     // firebase.auth().onAuthStateChanged(user => {
+//     //     if (user) {
 
-        if (user.emailVerified) {
+//         if (user.emailVerified) {
 
-            var uid = user.uid;
+//             var uid = user.uid;
 
-            db.ref('users/' + uid).on('value', snapshot => {
-                userFirst = snapshot.val().firstName;
-                userLast = snapshot.val().firstLast;
-                email = snapshot.val().email;
-                hTown = snapshot.val().hTown;
-                petName = snapshot.val().petName;
-                score = snapshot.val().score;
-                level = snapshot.val().level;
-            });
-        }
-    })
+//             db.ref('users/' + uid).on('value', snapshot => {
+//                 userFirst = snapshot.val().firstName;
+//                 userLast = snapshot.val().firstLast;
+//                 email = snapshot.val().email;
+//                 hTown = snapshot.val().hTown;
+//                 petName = snapshot.val().petName;
+//                 score = snapshot.val().score;
+//                 level = snapshot.val().level;
+//             });
+//         } else {
+//         location.replace('../Wagtive/index.html')
+//     } 
+// })
 
-})
+// // })

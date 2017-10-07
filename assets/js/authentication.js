@@ -23,6 +23,7 @@ $(document).ready(function() {
         lastName = $("#modalLName").val().trim();
         email = $("#modalEmail").val().trim();
         password = $("#modalPassword").val().trim();
+        password2 = $("#modalPassword2").val().trim();
         hTown = $("#modalHTown").val().trim();
         petName = $("#modalPName").val().trim();
 
@@ -36,7 +37,7 @@ $(document).ready(function() {
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
-                htTown: hTown,
+                hTown: hTown,
                 petName: petName,
                 score: 0,
                 level: 'puppy'
@@ -74,14 +75,20 @@ $(document).ready(function() {
                 var uid = user.uid;
 
                 db.ref('users/' + uid).on('value', snapshot => {
-                    userFirst = snapshot.val().firstName;
-                    userLast = snapshot.val().firstLast;
-                    email = snapshot.val().email;
-                    hTown = snapshot.val().hTown;
-                    petName = snapshot.val().petName;
-                    score = snapshot.val().score;
-                    level = snapshot.val().level;
-                });
+                    userObj.userFirst = snapshot.val().firstName;
+                    userObj.userLast = snapshot.val().lastName;
+                    userObj.email = snapshot.val().email;
+                    userObj.hTown = snapshot.val().hTown;
+                    userObj.petName = snapshot.val().petName;
+                    userObj.score = snapshot.val().score;
+                    userObj.level = snapshot.val().level;
+                    userObj.loggedIn = true;
+                    userObj.verified = true;
+
+                    console.log(userObj)
+
+                })
+
             } else {
 
                 console.log("email not verified");
