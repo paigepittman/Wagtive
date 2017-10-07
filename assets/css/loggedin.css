@@ -80,6 +80,33 @@ h2 {
 	background-color: #aaa;
 }
 
+.tempContainer {
+	position: absolute;
+	width: 20vh;
+	height: 20vh;
+}
+
+.tempContainer:nth-child(1) {
+	left: 20vh;
+	top: 20vh;
+}
+
+
+.tempContainer:nth-child(2) {
+	right: 20vh;
+	top: 20vh;
+}
+
+.tempContainer:nth-child(3) {
+	left: 20vh;
+	top: 60vh;
+}
+
+.tempContainer:nth-child(4) {
+	right: 20vh;
+	top: 60vh;
+}
+
 #saveProfile {
 	margin-right: -15px;
 }
@@ -139,5 +166,9 @@ h2 {
 }
 
 .nav-link:hover {
+	color: white;
+}
+
+.tempContainer button:hover a{
 	color: white;
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>Walking/Running</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:500, 900" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,7 +25,7 @@
 					<div class="col-8">
 						<ul class="nav nav-pills justify-content-around">
 							<li class="nav-item">
-								<a class="nav-link" href="#">Home</a>
+								<a class="nav-link" href="home.html">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="leaderboard.html">Leaderboard</a>
@@ -44,57 +44,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-center">
+		<div class="row justify-content-center" id="mainContainer">
 			<div class="col-9">
 				<nav class="breadcrumb">
-					<span class="breadcrumb-item active">Home</span>
+					<a class="breadcrumb-item" href="home.html">Home</a>
+					<a class="breadcrumb-item" href="activities.html">Activities</a>
+					<span class="breadcrumb-item active">Walking/Running</span>
 				</nav>
 			</div>
 		</div>
-		<div class="row justify-content-center" id="mainContainer">
-			<div class="col-9">
-				<div class="row justify-content-center" id="stats">
-					<div class="col-3">
-						<img id="profileImage" src="assets/images/profile.jpg" alt="Profile Image">
-					</div>
-					<div class="col-6">
-						<div class="row justify-content-between">
-							<div class="col-6 d-flex flex-column">
-								<span id="nameSpan">John Doe</span>
-								<div class="mt-1"><span>Current Level</span><span class="font-weight-bold"> Puppy</span><i id="infoTooltip" class="ml-2 fa fa-info-circle" data-toggle="tooltip" data-placement="right" data-html="true" title="<strong>Levels:</strong><ol><li>Puppy</li><li>Lap Dog</li><li>Tail Wagger</li><li>Lively Pooch</li><li>Sporty Hound</li><li>Alpha Dog</li></ol>" aria-hidden="true"></i></div>
-								<div class="mt-1"><span>Treats</span><span class="font-weight-bold"> 250</span></div>
-							</div>
-							<div class="col-6 d-flex align-items-center justify-content-end">
-								<button id="startActivity" class="btn btn-outline-primary" type="submit">Start Activity</button>
-							</div>
-							<div class="col-12">
-								<div id="progressOut" class="mt-4">
-									<div id="progressIn">
-									</div>
-								</div>
-							</div>
-							<div class="col-12 text-center">
-								<span>Progress to next level</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<div class="col-9">
-						<h2 class="pl-3">Latest Activities</h2>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
-	<script type="text/javascript">
-		$("#infoTooltip").hover(function () {
-			$('[data-toggle="tooltip"]').tooltip("show")
-		},
-		function () {
-			$('[data-toggle="tooltip"]').tooltip("hide")
-		})
-	</script>
 </body>
 </html>
