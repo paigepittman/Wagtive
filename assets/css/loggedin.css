@@ -130,6 +130,10 @@ h2 {
 	height: 50px;
 }
 
+.tooltip {
+	font-size: 11px;
+}
+
 .nav-link {
 	color: white;
 }
