@@ -4,6 +4,28 @@ $(document).ready(function() {
 
         var user = firebase.auth().currentUser;
 
+        //UPDATE TEXT FIELDS
+
+        $('#saveProfile').on('click', function(e) {
+            e.preventDefault();
+
+            var first = $('#inputFName').val().trim();
+            var last = $('#inputLName').val().trim();
+            var email = $('#inputEmail').val().trim();
+            var pName = $('#inputPName').val().trim();
+            var hTown = $('#inputHTown').val().trim();
+
+            db.ref('users/' + user.uid).update({
+                firstName: first,
+                lastName: last,
+                email: email,
+                hTown: hTown,
+                petName: pName
+            });
+
+            $('form').trigger('reset')
+        });   
+
         var fileButton = $("#file")
 
         fileButton.on('change', e => {
