@@ -22,8 +22,9 @@ $(document).ready(function() {
                     $('#nameSpan').text(userFirst + ' ' + userLast)
                     $('#level').text(' ' + level)
                     $('#score').text(' ' + score)
-
                 })
+
+                $('#profileImage').attr('src', user.photoURL)
 
             } else {
 
