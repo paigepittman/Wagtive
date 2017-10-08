@@ -9,6 +9,9 @@ $(document).ready(function() {
                 var uid = user.uid;
 
                 db.ref('users/' + uid).on('value', snapshot => {
+
+                    //FILLS OUT USERS PROFILE
+
                     var userFirst = snapshot.val().firstName;
                     var userLast = snapshot.val().lastName;
                     var email = snapshot.val().email;
@@ -32,6 +35,8 @@ $(document).ready(function() {
             }
         } else {
 
+            //IF NOT LOGGED IN RETURN TO INDEX
+            
             location.replace('../Wagtive/index.html');
         }
     })
