@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    console.log("hello world! docuement ready.");
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBH-OgVkuMyOaep8meq0FJD1RxavuIlXlY",
@@ -10,37 +8,43 @@ $(document).ready(function() {
         storageBucket: "wagtive.appspot.com",
         messagingSenderId: "248580578313"
     };
+
     firebase.initializeApp(config);
     const db = firebase.database();
     const auth = firebase.auth();
 
-    var userName;
-    var userLevel;
-    var userPoints;
+    firebase.auth().onAuthStateChanged(user => {
 
-    //console.log(db.ref('/users'));
-    console.log(db.ref().on('child_added'));
+    var user = firebase.auth().currentUser;
 
-    //Adding users to the table
-    //Display values on the page.
-    // database.ref().on("child_added", function(childSnapshot){
-    //    var _newUserRow = $("<tr>"):
+    //logs current user
+    console.log("Current user: "+user.firstName);
 
-    //     var _user = $("<th scope = 'row'>").html(childSnapshot.val().firstName);
-    //     var _level =$("<th scope = 'row'>").html(childSnapshot.val().level);
-    //     var _points = $("<td>").html(childSnapshot.val().score);
-    //
-    //     _newUserRow.append(_user)
-    //         .append(_level)
-    //         .append(_points);
-;
-    //     $("#LeaderboardInformation").append(_newUserRow);
+    //logs specific value of current usser
+    console.log("Current email: " +user.email);
+    console.log("Current user ID: " +user.uid);
 
+    db.ref('users/').on('value', snapshot => {
+        allUsers = snapshot.val();
+        //logs all users
+        console.log("Here are all users: " +allUsers);
 
-    //});
+        //logs specific value of all users
+        var userList = []
 
-  //document end.
+        for (var x in allUsers)
+        {
+            db.ref('users/' + x).on('value', snapshot =>
+                {
+                    console.log(snapshot.val())});
+                    console.log(snapshot.val().level);
+                    console.log(snapshot.child("level").val());
+                    //var firstName = snapshot.child("name/first").val();
+                }
+
+        })
+
+    })
+
 });
-
-
 
