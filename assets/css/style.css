@@ -38,7 +38,7 @@ input {
 	padding: 15px 0 15px 0;
 }
 
-.form-group img {
+.modalLogo {
 	width: 100%;
 }
 
@@ -60,6 +60,11 @@ input {
 }
 
 #signupModal {
+	color: #868e96;
+	font-size: 13px;
+}
+
+#emailVerificationModal {
 	color: #868e96;
 	font-size: 13px;
 }
