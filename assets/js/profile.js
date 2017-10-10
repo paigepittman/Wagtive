@@ -3,6 +3,8 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(user => {
 
         var user = firebase.auth().currentUser;
+        var fileButton = $("#file");
+        var photoUrl;
 
         //UPDATE TEXT FIELDS
 
@@ -26,7 +28,7 @@ $(document).ready(function() {
             $('form').trigger('reset')
         });   
 
-        var fileButton = $("#file")
+
 
         fileButton.on('change', e => {
 
@@ -47,10 +49,12 @@ $(document).ready(function() {
                 //UPLOADS FILE TO FIREBASE
                 var uploadTask = storageRef.put(blob);
 
-            }
+                 //GETS NEWLY CREATED PHOTO URL
+                storageRef.getDownloadURL().then(function(url){
+                    photoUrl = url
+                })
 
-            //GETS NEWLY CREATED PHOTO URL
-            var photoUrl = 'https://firebasestorage.googleapis.com/v0/b/wagtive.appspot.com/o/users%2F'+ user.uid + '%2F' + file.name + '?alt=media&token=ead404cf-8598-418c-91a6-8a7509daf2be';
+            }
 
             //UPDATES USERS PROFILE WITH NEW PHOTO
             user.updateProfile({
