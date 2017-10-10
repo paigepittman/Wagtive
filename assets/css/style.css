@@ -24,11 +24,14 @@ h1, h2 {
 
 input {
 	height: 30px;
-	font-size: 14px;
+}
+
+.form-control {
+	font-size: 11px;
 }
 
 .modal-header, .modal-footer {
-	background-color: #0D90E6
+	background-color: #0D90E6;
 }
 
 .modal-footer {
