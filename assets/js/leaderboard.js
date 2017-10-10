@@ -27,7 +27,7 @@ $(document).ready(function() {
                 allUsers = snapshot.val();
 
                 //logs all users
-                console.log(allUsers)
+                console.log(allUsers);
 
                 //logs specific value of all users
                 var userList = []
@@ -35,9 +35,16 @@ $(document).ready(function() {
                 for (var x in allUsers) {
 
                     db.ref('users/' + x).on('value', snapshot => {
-                     //console.log(snapshot.val());
-                    console.log("The level is: " +snapshot.val().level);
-                    console.log("The first name is: " +snapshot.val().firstName);
+
+                    const newUserRow = $("<tr>");
+                    const userName =  $("<th> scope ='row'> ").html(snapshot.val().firstName);
+                    const userLevel = $("<td>").html(snapshot.val().level);
+                    const userPoints = $("<td>").html(snapshot.val().score);
+
+                    newUserRow.append(userName)
+                        .append(userLevel)
+                        .append(userPoints);
+                    $("#LeaderboardInformation").append(newUserRow);
                 })
 
             }
