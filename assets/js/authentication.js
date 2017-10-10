@@ -32,7 +32,6 @@ $(document).ready(function() {
         const promise = auth.createUserWithEmailAndPassword(email, password).then(function(user) {
 
             // STORES ADDITIONAL DATA FROM REGISTRATION FORM
-
             db.ref('users/' + user.uid).set({
                 firstName: firstName,
                 lastName: lastName,

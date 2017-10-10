@@ -18,10 +18,10 @@ $(document).ready(function() {
              user = firebase.auth().currentUser;
 
              //logs current user
-             console.log(user)
+             console.log(user);
 
                 //logs specific value of current usser
-                console.log(user.email)
+                console.log(user.email);
 
                 db.ref('users/').on('value', snapshot => {
                 allUsers = snapshot.val();
