@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
     firebase.auth().onAuthStateChanged(user => {
 
         var user = firebase.auth().currentUser;
@@ -26,20 +26,20 @@ $(document).ready(function() {
             });
 
             $('form').trigger('reset')
-        });   
+        });
 
 
 
         fileButton.on('change', e => {
 
-        	//GETS FILE SELECTED 
+            //GETS FILE SELECTED 
             var file = e.target.files[0];
 
             //CREATES NEW FILE READER
             var reader = new FileReader();
             reader.onloadend = function() {
 
-            	//TURNS FILE INTO BLOB
+                //TURNS FILE INTO BLOB
                 var blob = new Blob([file], { type: "image/jpeg" });
 
                 //PHOTO STORAGE LOCATION
@@ -49,17 +49,21 @@ $(document).ready(function() {
                 //UPLOADS FILE TO FIREBASE
                 var uploadTask = storageRef.put(blob);
 
-                 //GETS NEWLY CREATED PHOTO URL
-                storageRef.getDownloadURL().then(function(url){
+                //GETS NEWLY CREATED PHOTO URL
+                storageRef.getDownloadURL().then(function(url) {
                     photoUrl = url
+
+
+                    user.updateProfile({
+                        photoURL: photoUrl
+                    })
+
                 })
 
             }
 
             //UPDATES USERS PROFILE WITH NEW PHOTO
-            user.updateProfile({
-                	photoURL: photoUrl
-                })
+
 
             reader.onerror = function(e) {
                 console.log("Failed file read: " + e.toString());
