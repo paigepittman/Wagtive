@@ -37,7 +37,7 @@
 <div class="modal" id="signupModal">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header text-right">
+			<div class="modal-header">
 				<h5></h5>
 			</div>
 			<div class="modal-body">
@@ -90,18 +90,32 @@
 <div class="modal" id="emailVerificationModal">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
-				<h5></h5>
+			<div class="modal-header py-0 justify-content-end">
+				<button type="button" class="modal-title close" data-dismiss="modal" aria-label="Close">
+					<span class="pull-right" aria-hidden="true">&times;</span>
+				</button>
 			</div>
 			<div class="modal-body">
-				<div class="row justify-content-center">
-					<div class="col-8">
-						<img class="modalLogo" src="assets/images/logo.png" alt="Wagtive">
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-11">
-						<h5 class="py-4">Please verify your email before signing in!</h5>
+				<div class="row py-5">
+					<div class="col-12">
+						<div class="row justify-content-center">
+							<div class="col-8">
+								<img class="modalLogo" src="assets/images/logo.png" alt="Wagtive">
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-11">
+								<h6 class="text-center py-4">Please verify your email before signing in!</h6>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-3">
+								<button id="resendEmail" type="button" class="btn btn-outline-primary">Resend</button>
+							</div>
+							<div class="col-3">
+								<button type="button" class="btn btn-outline-secondary ml-3" data-dismiss="modal">Close</button>
+							</div>
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -136,8 +150,8 @@
 				<h1>GET ACTIVE WITH WAGTIVE!</h1>
 				<h2>Gamified activities for you and your dog</h2>
 				<!-- Activate this modal and comment out the signup modal to see how email verification warning looks -->
-				<!-- <button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#emailVerificationModal">Sign up</button> -->
-				<button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#signupModal">Sign up</button>
+				<button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#emailVerificationModal">Sign up</button>
+				<!-- <button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#signupModal">Sign up</button> -->
 			</div>
 		</div>
 		<div class="row align-items-center justify-content-center" id="navMenu">

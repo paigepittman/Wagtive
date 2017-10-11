@@ -62,49 +62,64 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- Breadcrumb -->
-		<div class="row justify-content-center" id="mainContainer">
+
+		<div class="row justify-content-center">
 			<div class="col-9">
 				<nav class="breadcrumb">
 					<a class="breadcrumb-item" href="home.html">Home</a>
 					<span class="breadcrumb-item active">Leaderboard</span>
 				</nav>
 			</div>
-		</div> <!-- Breadcrumb end -->
-
-		<!-- Active area -->
-		<div class="row justify-content-center">
-
-			<div class="d-flex col-12 justify-content-center">
-				<h1>Leaderboard</h1>
-				<!----------------------- table beginning -------------------->
-				<table class = "table table-striped">
-					<thead>
-						<tr class="tableText" >
-							<th scope="col " > Name</th>
-							<th scope="col"> Level  </th>
-							<th scope="col">Points </th>
-						</tr>
-					</thead> <!-- end of table-head -->
-					<tbody id="LeaderboardInformation">
-						<tr>
-							<th scope="row">Lassie</th> <!--Train name -->
-							<td >Alpha Dog</td> <!-- destination -->
-							<td >8750</td> <!-- frequency -->
-						</tr>
-					</tbody> <!-- End of t-body -->
-				</table>
-				<!----------------------- table end -------------------->
-
-			</div>
 		</div>
 
+		<!-- Breadcrumb end -->
 
+		<!-- Active area -->
 
+		<div class="row justify-content-center" id="mainContainer">
+			<div class="col-8">
+				<div class="row justify-content-center" id="leaderboardTable">
 
+					<!-- table beginning -->
 
+					<table class = "table table-striped">
+						<thead>
+							<tr class="tableText" >
+								<th class="text-center" scope="col">Name</th>
+								<th class="text-center" scope="col">Level</th>
+								<th class="text-center" scope="col">Points</th>
+							</tr>
+						</thead>
 
+						<!-- end of table-head -->
+						
+						<tbody id="LeaderboardInformation">
+							<tr>
+								<!-- Name -->
 
+								<td class="text-center">Lassie</td>
+								
+								<!-- Level -->
+
+								<td class="text-center">Alpha Dog</td>
+
+								<!-- Points -->
+
+								<td class="text-center">8750</td>
+							</tr>
+						</tbody>
+
+						<!-- End of t-body -->
+
+					</table>
+
+					<!-- table end -->
+
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
