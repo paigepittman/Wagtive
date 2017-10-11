@@ -8,6 +8,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="assets/icons/manifest.json">
+	<link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -19,14 +37,14 @@
 <div class="modal" id="signupModal">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header text-right">
+			<div class="modal-header">
 				<h5></h5>
 			</div>
 			<div class="modal-body">
 				<form class="form col-12" id="signupForm">
 					<div class="form-group row justify-content-center">
 						<div class="col-8">
-							<img src="assets/images/logo.png" alt="Wagtive">
+							<img class="modalLogo" src="assets/images/logo.png" alt="Wagtive">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -73,6 +91,44 @@
 		</div>
 	</div>
 </div>
+<div class="modal" id="emailVerificationModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header py-0 justify-content-end">
+				<button type="button" class="modal-title close" data-dismiss="modal" aria-label="Close">
+					<span class="pull-right" aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row py-5">
+					<div class="col-12">
+						<div class="row justify-content-center">
+							<div class="col-8">
+								<img class="modalLogo" src="assets/images/logo.png" alt="Wagtive">
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-11">
+								<h6 class="text-center py-4">Please verify your email before signing in!</h6>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-3">
+								<button id="resendEmail" type="button" class="btn btn-outline-primary">Resend</button>
+							</div>
+							<div class="col-3">
+								<button type="button" class="btn btn-outline-secondary ml-3" data-dismiss="modal">Close</button>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<h5></h5>
+			</div>
+		</div>
+	</div>
+</div>
 <body>
 	<div class="container-fluid">
 		<div class="row justify-content-center mt-3">
@@ -97,7 +153,9 @@
 			<div class="col-7 text-center">
 				<h1>GET ACTIVE WITH WAGTIVE!</h1>
 				<h2>Gamified activities for you and your dog</h2>
-				<button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#signupModal">Sign up</button>
+				<!-- Activate this modal and comment out the signup modal to see how email verification warning looks -->
+				<button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#emailVerificationModal">Sign up</button>
+				<!-- <button id="signupButton" class="btn btn-custom px-5 mt-3" type="submit" data-toggle="modal" data-target="#signupModal">Sign up</button> -->
 			</div>
 		</div>
 		<div class="row align-items-center justify-content-center" id="navMenu">
