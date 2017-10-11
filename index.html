@@ -76,7 +76,7 @@
 						<input type="text" id="modalHTown" class="form-control col-7" placeholder="Los Angeles, CA" required>
 					</div>
 					<div class="form-group row justify-content-end">
-						<p class="text-danger" id="passwdValid">Passwords do not match</p>
+						<p class="text-danger d-none" id="passwdValid">Passwords do not match</p>
 						<button id="modalSignup" class="btn btn-custom col-md-4 mt-3" type="submit">Sign up</button>
 						<div class="col-1"></div>
 					</div>
@@ -114,7 +114,7 @@
 								<button id="resendEmail" type="button" class="btn btn-outline-primary">Resend</button>
 							</div>
 							<div class="col-3">
-								<button type="button" class="btn btn-outline-secondary ml-3" data-dismiss="modal">Close</button>
+								<button type="button" id="closeEmailModal" class="btn btn-outline-secondary ml-3" data-dismiss="modal">Close</button>
 							</div>
 						</div>						
 					</div>
