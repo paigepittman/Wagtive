@@ -40,7 +40,7 @@ $(document).ready(function() {
                     $('#points').text(' ' + points)
                 })
 
-                $('#profileImage').attr('src', user.photoURL)
+                $('#profileImage').attr('src', user.photoURL);
 
 
                 // db.ref('users/' + uid + '/activities' + '/' + activities).set(

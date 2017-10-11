@@ -6,30 +6,6 @@ $(document).ready(function() {
         var fileButton = $("#file");
         var photoUrl;
 
-        //UPDATE TEXT FIELDS
-
-        $('#saveProfile').on('click', function(e) {
-            e.preventDefault();
-
-            var first = $('#inputFName').val().trim();
-            var last = $('#inputLName').val().trim();
-            var email = $('#inputEmail').val().trim();
-            var pName = $('#inputPName').val().trim();
-            var hTown = $('#inputHTown').val().trim();
-
-            db.ref('users/' + user.uid).update({
-                firstName: first,
-                lastName: last,
-                email: email,
-                hTown: hTown,
-                petName: pName
-            });
-
-            $('form').trigger('reset')
-        });
-
-
-
         fileButton.on('change', e => {
 
             //GETS FILE SELECTED 
@@ -52,12 +28,7 @@ $(document).ready(function() {
                 //GETS NEWLY CREATED PHOTO URL
                 storageRef.getDownloadURL().then(function(url) {
                     photoUrl = url;
-
-
-                    user.updateProfile({
-                        photoURL: photoUrl
-                    })
-
+                    $('file').text(url);
                 })
 
             }
@@ -71,6 +42,69 @@ $(document).ready(function() {
             reader.readAsArrayBuffer(file);
         })
 
+        //UPDATE TEXT FIELDS
+
+        $('#saveProfile').on('click', function(e) {
+            e.preventDefault();
+
+            var inputFirst = $('#inputFName').val().trim();
+            var inputLast = $('#inputLName').val().trim();
+            var inputEmail = $('#inputEmail').val().trim();
+            var inputPName = $('#inputPName').val().trim();
+            var inputHTown = $('#inputHTown').val().trim();
+
+            db.ref('users/' + user.uid).on('value', function(snapshot) {
+                first = snapshot.val().firstName;
+                last = snapshot.val().lastName;
+                email = snapshot.val().email;
+                hTown = snapshot.val().hTown;
+                pName = snapshot.val().petName;
+
+                if (inputFirst !== ""){
+                    first = inputFirst;
+                }
+
+                if (inputLast !== ""){
+                    last = inputLast;
+                }
+
+                if (inputEmail !== ""){
+                    email = inputEmail;
+                    // user.updateEmail(email);
+                }
+
+                if (inputPName !== ""){
+                    pName = inputPName;
+                }
+
+                if (inputHTown !== ""){
+                    hTown = inputHTown;
+                }
+
+                db.ref('users/' + user.uid).update({
+                firstName: first,
+                lastName: last,
+                email: email,
+                hTown: hTown,
+                petName: pName
+            });
+
+           
+
+            console.log(photoUrl)
+
+            user.updateProfile({
+                photoURL: photoUrl
+            })
+
+            $('form').trigger('reset')
+
+             })
+
+            
+        })
+
+        });
     });
 
-});
+

@@ -44,7 +44,6 @@ $(document).ready(function() {
                     email: email,
                     hTown: hTown,
                     petName: petName,
-                    photoUrl: '../Wagtive/assets/images/profile.png',
                     points: 300,
                     level: 'puppy',
                     activities: 0,
@@ -58,7 +57,15 @@ $(document).ready(function() {
 				firebase.auth().onAuthStateChanged(user => {
 					const promise = user.sendEmailVerification().then(function() {
 						console.log("Verification email sent");
-						location.replace('../Wagtive/validate.html');
+
+                        var photoUrl= '../Wagtive/assets/images/profile.jpg';
+
+                        user.updateProfile({
+                        photoURL: photoUrl
+                        });
+
+						$("#signupModal").toggle();
+                        
 
 					});
 
