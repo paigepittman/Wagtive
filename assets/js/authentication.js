@@ -46,7 +46,7 @@ $(document).ready(function() {
                     petName: petName,
                     photoUrl: '../Wagtive/assets/images/profile.png',
                     points: 300,
-                    level: 'puppy'
+                    level: 'puppy',
                     activities: 0,
                 });
 
