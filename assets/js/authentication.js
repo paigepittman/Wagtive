@@ -34,6 +34,7 @@ $(document).ready(function() {
 
         else{
 
+
             const promise = auth.createUserWithEmailAndPassword(email, password).then(function(user) {
 
                 // STORES ADDITIONAL DATA FROM REGISTRATION FORM
