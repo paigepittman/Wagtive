@@ -1,5 +1,5 @@
 # Wagtive
-Wagtive is a gamification app for dog owners. The goal is to provide a range of activities including mile tracking, suggested actvities (hiking trails, pet-friendly places), challenges, and more. The user can progress through various levels, the lowest being a puppy, the highest an alpha dog.
+Wagtive is a gamification web app for dog owners. The goal is to provide a range of activities including mile tracking, suggested actvities (hiking trails, pet-friendly places), challenges, and more. The user can progress through various levels, the lowest being a puppy, the highest an alpha dog.
 
 ### Wagtive Levels
 * Puppy  - 0 to 1,000 points
