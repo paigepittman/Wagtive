@@ -44,10 +44,12 @@ $(document).ready(function() {
                     email: email,
                     hTown: hTown,
                     petName: petName,
+                    photoUrl: '../Wagtive/assets/images/profile.png',
 
                     score: 0,
 
                     level: 'puppy'
+                });
 
 				// STORES ADDITIONAL DATA FROM REGISTRATION FORM
 
