@@ -44,7 +44,9 @@ $(document).ready(function() {
                     email: email,
                     hTown: hTown,
                     petName: petName,
-                    points: 100,
+
+                    score: 0,
+
                     level: 'puppy'
 
                 })
