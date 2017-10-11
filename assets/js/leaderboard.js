@@ -27,27 +27,44 @@ $(document).ready(function() {
                 allUsers = snapshot.val();
 
                 //logs all users
-                console.log(allUsers);
+                console.log("All users: ", allUsers);
 
-                //logs specific value of all users
-                var userList = []
+                // ----------------------------------------------
+                var allKeys = Object.keys(allUsers)
 
-                for (var x in allUsers) {
-
-                    db.ref('users/' + x).on('value', snapshot => {
-
-                    const newUserRow = $("<tr>");
-                    const userName =  $("<th> scope ='row'> ").html(snapshot.val().firstName);
-                    const userLevel = $("<td>").html(snapshot.val().level);
-                    const userPoints = $("<td>").html(snapshot.val().score);
-
-                    newUserRow.append(userName)
-                        .append(userLevel)
-                        .append(userPoints);
-                    $("#LeaderboardInformation").append(newUserRow);
+                var sortedAllUsersId = allKeys.sort(function(a,b){
+                    return allUsers[a].score > allUsers[b].score
                 })
 
-            }
+                console.log('sortedAllUsersId',sortedAllUsersId)
+
+                sortedAllUsersId.forEach(function(userId){
+                    var user = allUsers[userId]
+
+                    console.log('user', user)
+                })
+                // ----------------------------------------------
+                //logs specific value of all users
+                //var userList = []
+
+                // for (var x in allUsers) {
+                //
+                //     db.ref('users/' + x).on('value', snapshot => {
+                //
+                //     const newUserRow = $("<tr>");
+                //     const userName =  $("<th> scope ='row'> ").html(snapshot.val().firstName);
+                //     const userLevel = $("<td>").html(snapshot.val().level);
+                //     const userPoints = $("<td>").html(snapshot.val().score);
+                //
+                //
+                //
+                //     newUserRow.append(userName)
+                //         .append(userLevel)
+                //         .append(userPoints);
+                //     $("#LeaderboardInformation").append(newUserRow);
+                // })
+
+            //}
 
         })
 
