@@ -7,6 +7,8 @@ $(document).ready(function() {
             if (user.emailVerified) {
 
                 var uid = user.uid;
+                var activities;
+                var points;
 
                 db.ref('users/' + uid).on('value', snapshot => {
 
@@ -17,8 +19,8 @@ $(document).ready(function() {
                     var email = snapshot.val().email;
                     var hTown = snapshot.val().hTown;
                     var petName = snapshot.val().petName;
-                    var points = snapshot.val().points;
-                    var activities = snapshot.val().activities;
+                    points = snapshot.val().points;
+                    activities = snapshot.val().activities;
                     var level;
 
                     if (points < 1000) {
@@ -43,13 +45,47 @@ $(document).ready(function() {
                 $('#profileImage').attr('src', user.photoURL);
 
 
-                // db.ref('users/' + uid + '/activities' + '/' + activities).set(
+                // db.ref('users/' + uid + '/activities').push(
                 //         {
-                //             name: 'Walking',
-                //             date: '10/10/17',
-                //             location: 'Los Angeles'
-                //         }
-                //     )
+                //             name: 'Grooming',
+                //             date: '10/09/17',
+                //             location: 'Fido\'s Grooming, Los Angeles'
+                //         })
+
+              
+
+                    
+
+                var ref = db.ref('users/' + uid + '/activities');
+
+                ref.orderByChild('date').limitToLast(10).on('child_added', function(snapshot) {
+                    var newRow = $('<tr>')
+
+                    var newDate = $('<td>').text(snapshot.val().date)
+                    var newActivity = $('<td>').text(snapshot.val().name)
+                    var newLocation = $('<td>').text(snapshot.val().location)
+                    
+                    if(snapshot.val().name == "Run" || snapshot.val().name == "Walk") {
+                        var newDistance = $('<td>').text(snapshot.val().distance + " mi.")
+                        var newSpeed = $('<td>').text(snapshot.val().speed + " mph")
+                    } else {
+                        var newDistance = $('<td>').text("")
+                        var newSpeed = $('<td>').text("")
+                    };
+
+                    newRow.append(newDate);
+                    newRow.append(newActivity);
+                    newRow.append(newLocation);
+                    newRow.append(newDistance);
+                    newRow.append(newSpeed);
+                    
+                    
+                    $('#activities').prepend(newRow);
+
+                   
+                })
+
+
 
 
 
