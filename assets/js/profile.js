@@ -23,18 +23,17 @@ $(document).ready(function() {
                 console.warn(file);
 
                 //UPLOADS FILE TO FIREBASE
-                var uploadTask = storageRef.put(blob);
+                var uploadTask = storageRef.put(blob).then(function() {
 
-                //GETS NEWLY CREATED PHOTO URL
-                storageRef.getDownloadURL().then(function(url) {
-                    photoUrl = url;
-                    $('file').text(url);
-                })
+                    //GETS NEWLY CREATED PHOTO URL
+                    storageRef.getDownloadURL().then(function(url) {
+                        photoUrl = url;
+                        $('file').text(url);
+                    })
+
+                });
 
             }
-
-            //UPDATES USERS PROFILE WITH NEW PHOTO
-
 
             reader.onerror = function(e) {
                 console.log("Failed file read: " + e.toString());
@@ -60,51 +59,50 @@ $(document).ready(function() {
                 hTown = snapshot.val().hTown;
                 pName = snapshot.val().petName;
 
-                if (inputFirst !== ""){
+                if (inputFirst !== "") {
                     first = inputFirst;
                 }
 
-                if (inputLast !== ""){
+                if (inputLast !== "") {
                     last = inputLast;
                 }
 
-                if (inputEmail !== ""){
+                if (inputEmail !== "") {
                     email = inputEmail;
                     // user.updateEmail(email);
                 }
 
-                if (inputPName !== ""){
+                if (inputPName !== "") {
                     pName = inputPName;
                 }
 
-                if (inputHTown !== ""){
+                if (inputHTown !== "") {
                     hTown = inputHTown;
                 }
 
                 db.ref('users/' + user.uid).update({
-                firstName: first,
-                lastName: last,
-                email: email,
-                hTown: hTown,
-                petName: pName
-            });
+                    firstName: first,
+                    lastName: last,
+                    email: email,
+                    hTown: hTown,
+                    petName: pName
+                });
 
-           
 
-            console.log(photoUrl)
 
-            user.updateProfile({
-                photoURL: photoUrl
+                //UPDATES USERS PROFILE WITH NEW PHOTO
+
+                user.updateProfile({
+                    photoURL: photoUrl
+                })
+
+                $('form').trigger('reset')
+
             })
 
-            $('form').trigger('reset')
 
-             })
-
-            
         })
 
-        });
     });
-
+});
 
