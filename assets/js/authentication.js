@@ -45,10 +45,9 @@ $(document).ready(function() {
                     hTown: hTown,
                     petName: petName,
                     photoUrl: '../Wagtive/assets/images/profile.png',
-
-                    score: 0,
-
+                    points: 300,
                     level: 'puppy'
+                    activities: 0,
                 });
 
 				// STORES ADDITIONAL DATA FROM REGISTRATION FORM

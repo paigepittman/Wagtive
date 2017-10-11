@@ -17,10 +17,8 @@ $(document).ready(function() {
                     var email = snapshot.val().email;
                     var hTown = snapshot.val().hTown;
                     var petName = snapshot.val().petName;
-                    var score = snapshot.val().score;
-                    var level = snapshot.val().level;
-                    var loggedIn = true;
-                    var verified = true;
+                    var points = snapshot.val().points;
+                    var level;
 
                     $('#nameSpan').text(userFirst + ' ' + userLast)
                     $('#level').text(' ' + level)
@@ -28,6 +26,17 @@ $(document).ready(function() {
                 })
 
                 $('#profileImage').attr('src', user.photoURL)
+
+
+                db.ref('users/' + uid + '/activities').push(
+                        {
+                            name: 'Walking',
+                            date: '10/10/17',
+                            location: 'Los Angeles'
+                        }
+                    )
+
+
 
             } else {
 
