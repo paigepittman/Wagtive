@@ -27,38 +27,43 @@ $(document).ready(function() {
         hTown = $("#modalHTown").val().trim();
         petName = $("#modalPName").val().trim();
 
+        if (password !== password2) {
 
+            $("#passwdValid").removeClass('d-none');
+        }
 
-        const promise = auth.createUserWithEmailAndPassword(email, password).then(function(user) {
+        else{
 
-            // STORES ADDITIONAL DATA FROM REGISTRATION FORM
+            const promise = auth.createUserWithEmailAndPassword(email, password).then(function(user) {
 
-            db.ref('users/' + user.uid).set({
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                hTown: hTown,
-                petName: petName,
-                score: 0,
-                level: 'puppy'
+                // STORES ADDITIONAL DATA FROM REGISTRATION FORM
 
-            })
+                db.ref('users/' + user.uid).set({
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    hTown: hTown,
+                    petName: petName,
+                    points: 100,
+                    level: 'puppy'
 
-            // SEND VERIFICATION EMAIL
+                })
 
-            firebase.auth().onAuthStateChanged(user => {
-                const promise = user.sendEmailVerification().then(function() {
-                    console.log("Verification email sent");
-                    location.replace('../Wagtive/home.html');
+                // SEND VERIFICATION EMAIL
 
-                });
+                firebase.auth().onAuthStateChanged(user => {
+                    const promise = user.sendEmailVerification().then(function() {
+                        console.log("Verification email sent");
+                        location.replace('../Wagtive/validate.html');
 
-            })
+                    });
 
-        });
-        promise.catch(e => console.log(e.message));
+                })
+
+            });
+            promise.catch(e => console.log(e.message));
+        }
     });
-
 
     // LOGOUT
 
