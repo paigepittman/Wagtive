@@ -8,7 +8,7 @@ $(document).ready(function() {
 		const password = $("#inputPassword").val().trim();
 
 		const promise = auth.signInWithEmailAndPassword(email, password).then(function() {
-			location.replace('../Wagtive/home.html');
+			location.replace('home.html');
 		});
 		promise.catch(e => console.log(e.message));
 
@@ -58,7 +58,7 @@ $(document).ready(function() {
 					const promise = user.sendEmailVerification().then(function() {
 						console.log("Verification email sent");
 
-                        var photoUrl= '../Wagtive/assets/images/profile.jpg';
+                        var photoUrl= 'assets/images/profile.jpg';
 
                         user.updateProfile({
                         photoURL: photoUrl

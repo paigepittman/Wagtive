@@ -61,7 +61,7 @@ $(document).ready(function() {
 
             //IF NOT LOGGED IN RETURN TO INDEX
             
-            location.replace('../Wagtive/index.html');
+            location.replace('index.html');
         }
     })
 
