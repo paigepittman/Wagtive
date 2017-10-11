@@ -51,7 +51,7 @@ $(document).ready(function() {
 
                 //GETS NEWLY CREATED PHOTO URL
                 storageRef.getDownloadURL().then(function(url) {
-                    photoUrl = url
+                    photoUrl = url;
 
 
                     user.updateProfile({
