@@ -17,6 +17,21 @@ h2 {
 	font-size: 4vh;
 }
 
+.modal-header, .modal-footer {
+	color: white;
+	font-weight: bold;
+	background-color: #0D90E6;
+	height: 40px;
+}
+
+.modal-footer {
+	padding: 15px 0 15px 0;
+}
+
+.checkInImage {
+	width: 100%;
+}
+
 .form-control::placeholder {
 	font-size: 11px;
 }
