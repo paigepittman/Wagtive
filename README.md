@@ -20,3 +20,4 @@ Wagtive is a gamification web app for dog owners. The goal is to provide a range
 Some images were taken from Unsplash.com and flickr. The following are credited with the photos:
 * Dawid Sobolewski [https://unsplash.com/photos/3A32x1OmhvE]
 * Alvin Balemesa [https://unsplash.com/photos/lJstr7OYCoM]
+Loading Bar cloned from loadingio [https://github.com/loadingio/loading-bar]
