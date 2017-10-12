@@ -9,6 +9,7 @@ $(document).ready(function() {
                 var uid = user.uid;
                 var activities;
                 var points;
+                var nextLevel;
 
                 db.ref('users/' + uid).on('value', snapshot => {
 
@@ -25,14 +26,19 @@ $(document).ready(function() {
 
                     if (points < 1000) {
                         level = "Puppy";
+                        nextLevel = 1000;
                     } else if (points < 2000) {
                         level = "Lap Dog";
+                        nextLevel = 2000;
                     } else if (points < 3000) {
                         level = "Tail Wagger";
+                        nextLevel = 3000;
                     } else if (points < 4000) {
                         level = "Lively Pooch";
+                        nextLevel = 4000;
                     } else if (points < 5000) {
                         level = "Sporty Hound";
+                        nextLevel = 5000;
                     } else if (points > 5001) {
                         level = "Alpha Dog";
                     };
@@ -40,6 +46,23 @@ $(document).ready(function() {
                     $('#nameSpan').text(userFirst + ' ' + userLast)
                     $('#level').text(' ' + level)
                     $('#points').text(' ' + points)
+
+                    var progressPerct = ((points/nextLevel)*100);
+
+
+                    var bar1 = new ldBar("#progress", {
+                        "stroke": '#f00',
+                        "stroke-width": 10,
+                        "stroke": 'data:ldbar/res,gradient(0,1,#058,#0bf)',
+                        "preset": 'fan'
+                    });
+                    
+                    var bar2 = document.getElementById('progress').ldBar;
+                    bar1.set(progressPerct);
+
+
+
+
                 })
 
                 $('#profileImage').attr('src', user.photoURL);
