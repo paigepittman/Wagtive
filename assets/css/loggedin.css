@@ -1,3 +1,6 @@
+body {
+	color: #868e96;
+}
 img {
 	width: 100%;
 }
@@ -8,12 +11,11 @@ input {
 }
 
 label {
-	color: #868e96;
+/*	color: #868e96;*/
 	font-size: 14px;
 }
 
 h2 {
-	color: #868e96;
 	font-size: 4vh;
 }
 
@@ -87,7 +89,7 @@ h2 {
 }
 
 .dropdown-item {
-	color: #868e96;
+/*	color: #868e96;*/
 }
 
 .dropdown-item:hover {
@@ -132,7 +134,7 @@ h2 {
 }
 
 #stats {
-	color: #868e96;
+/*	color: #868e96;*/
 	font-size: 13px;
 }
 

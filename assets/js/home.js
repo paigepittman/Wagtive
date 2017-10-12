@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
     firebase.auth().onAuthStateChanged(user => {
+        
         // CHECK IF USER IS SIGNED IN
         if (user) {
+
             // CHECK IF SIGNED IN USERS EMAIL IS VERIFIED
             if (user.emailVerified) {
 
@@ -14,7 +16,6 @@ $(document).ready(function() {
                 db.ref('users/' + uid).on('value', snapshot => {
 
                     //FILLS OUT USERS PROFILE
-
                     var userFirst = snapshot.val().firstName;
                     var userLast = snapshot.val().lastName;
                     var email = snapshot.val().email;
@@ -49,24 +50,18 @@ $(document).ready(function() {
 
                     var progressPerct = ((points/nextLevel)*100);
 
-
                     var bar1 = new ldBar("#progress", {
                         "stroke": '#f00',
                         "stroke-width": 10,
                         "stroke": 'data:ldbar/res,gradient(0,1,#058,#0bf)',
                         "preset": 'fan'
                     });
-                    
+
                     var bar2 = document.getElementById('progress').ldBar;
                     bar1.set(progressPerct);
-
-
-
-
                 })
 
                 $('#profileImage').attr('src', user.photoURL);
-
 
                 // db.ref('users/' + uid + '/activities').push(
                 //         {
@@ -74,10 +69,6 @@ $(document).ready(function() {
                 //             date: '10/09/17',
                 //             location: 'Fido\'s Grooming, Los Angeles'
                 //         })
-
-              
-
-                    
 
                 var ref = db.ref('users/' + uid + '/activities');
 
@@ -101,27 +92,22 @@ $(document).ready(function() {
                     newRow.append(newLocation);
                     newRow.append(newDistance);
                     newRow.append(newSpeed);
-                    
-                    
                     $('#activities').prepend(newRow);
-
-                   
                 })
 
-
-
-
-
             } else {
-
                 console.log("email not verified");
             }
-        } else {
 
+        } else {
             //IF NOT LOGGED IN RETURN TO INDEX
-            
             location.replace('index.html');
         }
     })
-
+    $("#infoTooltip").hover(() => {
+            $('[data-toggle="tooltip"]').tooltip("show")
+        },
+        () => {
+            $('[data-toggle="tooltip"]').tooltip("hide")
+        })
 })
