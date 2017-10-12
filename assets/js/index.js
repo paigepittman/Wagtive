@@ -12,6 +12,11 @@ $(document).ready(function() {
         		$('#closeEmailModal').on('click', function(){
         			location.reload();
         		})
+
+
+                $("#resendEmail").on('click', function(){
+                    user.sendEmailVerification(); 
+    })
         	}
     	}    
     })
