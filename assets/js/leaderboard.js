@@ -31,7 +31,7 @@ $(document).ready(function() {
                 //console.log("Ordered by points: ", db.ref().child('users').orderByChild('points').startAt('10000'));
 
                 // ----------------------------------------------
-                // var allKeys = Object.keys(allUsers)
+                var allKeys = Object.keys(allUsers)
                 //
                 // var sortedAllUsersId = allKeys.sort(function(a,b){
                 //     return allUsers[a].score > allUsers[b].score
