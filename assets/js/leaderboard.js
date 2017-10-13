@@ -8,90 +8,32 @@ $(document).ready(function() {
         projectId: "wagtive",
         storageBucket: "wagtive.appspot.com",
         messagingSenderId: "248580578313"
-    };
+    };//end
 
     firebase.initializeApp(config);
 
-        firebase.auth().onAuthStateChanged(user =>
-        {
-             db = firebase.database();
-             user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(user =>
+    {
+         db = firebase.database();
+         user = firebase.auth().currentUser;
 
-             //logs current user
-             console.log(user);
+         //logs current user
+         console.log(user);
+        //logs specific value of current usser
+        console.log(user.email);
 
-                //logs specific value of current usser
-                console.log(user.email);
+        db.ref().child('users/').orderByChild('points').on('child_added', function(snapshot) {
 
-                db.ref('users/').on('value', snapshot => {
-                allUsers = snapshot.val();
+            var newRow = $('<tr>');
+            var newName = $('<td>').text(snapshot.val().firstName)
+            var newLevel = $('<td>').text(snapshot.val().level)
+            var newScore = $('<td>').text(snapshot.val().points)
+            newRow.append(newName)
+            newRow.append(newLevel)
+            newRow.append(newScore)
+            $('#LeaderboardInformation').prepend(newRow)
+        })//end db.ref()
+    })//end firebase.auth
 
-                //logs all users
-                console.log("All users: ", allUsers);
-                //console.log("Ordered by points: ", db.ref().child('users').orderByChild('points').startAt('10000'));
+}) //end document.ready
 
-                // ----------------------------------------------
-                var allKeys = Object.keys(allUsers)
-
-                var sortedAllUsersId = allKeys.sort(function(a,b){
-                    return allUsers[a].score > allUsers[b].score
-                })
-
-                console.log('sortedAllUsersId',sortedAllUsersId)
-
-                sortedAllUsersId.forEach(function(userId){
-                    var user = allUsers[userId]
-
-                    console.log('user', user)
-                })
-                // ----------------------------------------------
-                //logs specific value of all users
-                //var userList = []
-
-                for (var x in allUsers) {
-
-
-                    //db.ref('users/' + x).orderByChild('score').startAt('10000').on('value', snapshot => {
-                    //db.ref('users/' + x).orderByChild('score').endAt(9999).on('value', snapshot => {
-                    db.ref('users/' + x).on('value', snapshot => {
-                        console.log( snapshot.val());
-
-                        const newUserRow = $("<tr>");
-                        const userName =  $("<th> scope ='row'> ").html(snapshot.val().firstName);
-                        const userLevel = $("<td>").html(snapshot.val().level);
-                        const userPoints = $("<td>").html(snapshot.val().score);
-
-                        newUserRow.append(userName)
-                                .append(userLevel)
-                                .append(userPoints);
-                            $("#LeaderboardInformation").append(newUserRow);
-                    });
-
-
-                //     db.ref('users/' + x).on('value', snapshot => {
-                //
-                //     const newUserRow = $("<tr>");
-                //     const userName =  $("<th> scope ='row'> ").html(snapshot.val().firstName);
-                //     const userLevel = $("<td>").html(snapshot.val().level);
-                //     const userPoints = $("<td>").html(snapshot.val().score);
-                //
-                //
-                //
-                //     newUserRow.append(userName)
-                //         .append(userLevel)
-                //         .append(userPoints);
-                //     $("#LeaderboardInformation").append(newUserRow);
-                // })
-
-            }
-
-        })
-
-    })
-
-})
-
-    ////console.log(snapshot.val());
-    //console.log(snapshot.val().level);
-    //console.log(snapshot.child("level").val());
-//var firstName = snapshot.child("name/first").val();
