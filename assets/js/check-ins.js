@@ -33,21 +33,27 @@ function show_response_based_position(position) {
               var result_img=$('<img>').addClass("checkInImage").attr("src",response.businesses[i].image_url);
               div1.append(result_img);
 
-              var inf1=$('<span>').addClass("font-weight-bold").append('<br/>');
-              var inf2=$('<span>').addClass("py-0").append('<br/>');
-              var inf3=$('<span>');
+              var inf1=$('<span>').addClass("font-weight-bold").after("<br>");
+              var inf2=$('<span>').addClass("py-0").html("<br>");
+              var inf3=$('<span>').prepend("<br>");
 
               inf1.append(response.businesses[i].name);
               inf2.append(response.businesses[i].location.display_address[0]+" "+response.businesses[i].location.display_address[1]);
-              inf3.text("Rating: ");
-              inf3.append(response.businesses[i].rating);
+              //inf3.html(" Rating: ");
+              inf3.append(" Rating: "+response.businesses[i].rating);
+              console.log(response.businesses[i].rating);
+              console.log(inf3);
               div2.append(inf1).append(inf2).append(inf3);
 
               var btn=$("<button>").addClass("btn btn-outline-secondary").text("Check in");
 
               div3.append(btn);
 
-              $("#modalContent").append(div1).append(div2).append(div3);
+              var result_container_div=$("<div>").addClass("row align-items-center justify-content-around")
+              .css("margin-bottom","20px");
+
+              result_container_div.append(div1).append(div2).append(div3);
+              $("#check-ins-modal").append(result_container_div);
 
             }
 
@@ -62,3 +68,4 @@ function show_response_based_position(position) {
 
 
 }
+
