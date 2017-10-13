@@ -66,8 +66,7 @@ $(document).ready(function() {
 
                 $('#profileImage').attr('src', user.photoURL);
 
-
-                // db.ref('users/' + uid + '/activities').push(
+                // db.ref('users/' + uid + '/checkins').push(
                 //         {
                 //             date: '10/13/17',
                 //             activityType: "Check-In",
@@ -75,90 +74,6 @@ $(document).ready(function() {
                 //             points: 100,
                 //             distance: ""
                 //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '10/09/17',
-                //             activityType: "Check-In",
-                //             location: 'North Hollywood Park' ,
-                //             points: 100,
-                //             distance: ""
-                //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '10/01/17',
-                //             activityType: "Check-In",
-                //             location: 'Red Barn' ,
-                //             points: 100,
-                //             distance: ""
-                //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/21/17',
-                //             activityType: "Check-In",
-                //             location: 'Lake Hollywood Park' ,
-                //             points: 100,
-                //             distance: ""
-                //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/18/17',
-                //             activityType: "Check-In",
-                //             location: 'North Hollywood Park' ,
-                //             points: 100,
-                //             distance: ""
-                //         })
-
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '10/05/17',
-                //             activityType: "Running",
-                //             location: 'Los Angeles, CA' ,
-                //             points: 32,
-                //             distance: "1.3 miles"
-                //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '10/10/17',
-                //             activityType: "Running",
-                //             location: 'Los Angeles, CA' ,
-                //             points: 45,
-                //             distance: "1.8 miles"
-                //         })
-                // db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/16/17',
-                //             activityType: "Running",
-                //             location: 'North Hollywood, CA' ,
-                //             points: 19,
-                //             distance: "0.8 miles"
-                //         })
-                //  db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/28/17',
-                //             activityType: "Running",
-                //             location: 'North Hollywood, CA' ,
-                //             points: 28,
-                //             distance: "1.1 miles"
-                //         })
-                //  db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/15/17',
-                //             activityType: "Walking",
-                //             location: 'North Hollywood, CA' ,
-                //             points: 95,
-                //             distance: "3.8 miles"
-                //         })
-                //  db.ref('users/' + uid + '/activities').push(
-                //         {
-                //             date: '09/07/17',
-                //             activityType: "Walking",
-                //             location: 'Los Angeles, CA' ,
-                //             points: 58,
-                //             distance: "2.3 miles"
-                //         })
-
-
-
 
                 var activityRef = db.ref('users/' + uid + '/activities');
 
