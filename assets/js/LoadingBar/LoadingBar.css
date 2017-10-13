@@ -13,16 +13,16 @@ c.ldBar {
 
 .ldBar-label:after {
     content: "%";
-    display: none;
+/*    display: none;*/
 }
 
 .ldBar.no-percent .ldBar-label:after {
     content: "";
-    display: none;
+/*    display: none;*/
 
 }
 
-  .ldBar-label {
+.ldBar-label {
     text-align: center;
-    display: none;
+    margin-top: -60%;
   }
