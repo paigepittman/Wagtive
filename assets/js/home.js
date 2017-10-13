@@ -11,7 +11,7 @@ $(document).ready(function() {
                 var points;
                 var nextLevel;
 
-                db.ref('users/' + uid).on('value', snapshot => {
+                db.ref('users/' + uid).once('value', snapshot => {
 
                     //FILLS OUT USERS PROFILE
 
@@ -47,16 +47,15 @@ $(document).ready(function() {
                     $('#level').text(' ' + level)
                     $('#points').text(' ' + points)
 
-                    var progressPerct = ((points/nextLevel)*100);
+                    var progressPerct = ((points / nextLevel) * 100);
 
 
                     var bar1 = new ldBar("#progress", {
-                        "stroke": '#f00',
                         "stroke-width": 10,
-                        "stroke": 'data:ldbar/res,gradient(0,1,#058,#0bf)',
-                        "preset": 'fan'
+                        "stroke": 'data:ldbar/res,gradient(0,1,#007A00,#00D700)',
+                        "preset": 'circle'
                     });
-                    
+
                     var bar2 = document.getElementById('progress').ldBar;
                     bar1.set(progressPerct);
 
@@ -67,45 +66,56 @@ $(document).ready(function() {
 
                 $('#profileImage').attr('src', user.photoURL);
 
-
-                // db.ref('users/' + uid + '/activities').push(
+                // db.ref('users/' + uid + '/checkins').push(
                 //         {
-                //             name: 'Grooming',
-                //             date: '10/09/17',
-                //             location: 'Fido\'s Grooming, Los Angeles'
+                //             date: '10/13/17',
+                //             activityType: "Check-In",
+                //             location: 'PetSmart' ,
+                //             points: 100,
+                //             distance: ""
                 //         })
 
-              
+                var activityRef = db.ref('users/' + uid + '/activities');
 
-                    
-
-                var ref = db.ref('users/' + uid + '/activities');
-
-                ref.orderByChild('date').limitToLast(10).on('child_added', function(snapshot) {
+                activityRef.orderByChild('date').limitToLast(10).on('child_added', function(snapshot) {
                     var newRow = $('<tr>')
 
                     var newDate = $('<td>').text(snapshot.val().date)
-                    var newActivity = $('<td>').text(snapshot.val().name)
+                    var newActivity = $('<td>').text(snapshot.val().activityType)
                     var newLocation = $('<td>').text(snapshot.val().location)
-                    
-                    if(snapshot.val().name == "Run" || snapshot.val().name == "Walk") {
-                        var newDistance = $('<td>').text(snapshot.val().distance + " mi.")
-                        var newSpeed = $('<td>').text(snapshot.val().speed + " mph")
-                    } else {
-                        var newDistance = $('<td>').text("")
-                        var newSpeed = $('<td>').text("")
-                    };
+                    var newDistance = $('<td>').text(snapshot.val().distance)
+                    var newPoints = $('<td>').text(snapshot.val().points)
+
 
                     newRow.append(newDate);
                     newRow.append(newActivity);
                     newRow.append(newLocation);
                     newRow.append(newDistance);
-                    newRow.append(newSpeed);
-                    
-                    
+                    newRow.append(newPoints);
+
+
                     $('#activities').prepend(newRow);
 
-                   
+
+                })
+
+                var checkinRef = db.ref('users/' + uid + '/activities');
+
+                checkinRef.orderByChild('date').limitToLast(10).on('child_added', function(snapshot) {
+                    var newRow = $('<tr>')
+
+                    var newDate = $('<td>').text(snapshot.val().date)
+                    var newLocation = $('<td>').text(snapshot.val().location)
+                    var newPoints = $('<td>').text(snapshot.val().points)
+
+                    newRow.append(newDate);
+                    newRow.append(newLocation);
+                    newRow.append(newPoints);
+
+
+                    $('#checkins').prepend(newRow);
+
+
                 })
 
 
@@ -119,7 +129,7 @@ $(document).ready(function() {
         } else {
 
             //IF NOT LOGGED IN RETURN TO INDEX
-            
+
             location.replace('index.html');
         }
     })
