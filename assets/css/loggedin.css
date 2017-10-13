@@ -21,7 +21,6 @@ h2 {
 
 .modal-header, .modal-footer {
 	color: white;
-	font-weight: bold;
 	background-color: #0D90E6;
 	height: 40px;
 }
@@ -30,8 +29,13 @@ h2 {
 	padding: 15px 0 15px 0;
 }
 
+#checkInModal .modal-footer {
+	background: transparent;
+}
+
 .checkInImage {
-	width: 100%;
+	width: 80%;
+	margin-left: 10%
 }
 
 .form-control::placeholder {
