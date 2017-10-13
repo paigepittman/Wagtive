@@ -66,15 +66,14 @@ $(document).ready(function() {
 
                 $('#profileImage').attr('src', user.photoURL);
 
-
                 // db.ref('users/' + uid + '/checkins').push(
                 //         {
                 //             date: '10/13/17',
+                //             activityType: "Check-In",
                 //             location: 'PetSmart' ,
                 //             points: 100,
+                //             distance: ""
                 //         })
-
-
 
                 var activityRef = db.ref('users/' + uid + '/activities');
 
@@ -83,11 +82,14 @@ $(document).ready(function() {
 
                     var newDate = $('<td>').text(snapshot.val().date)
                     var newActivity = $('<td>').text(snapshot.val().activityType)
+                    var newLocation = $('<td>').text(snapshot.val().location)
                     var newDistance = $('<td>').text(snapshot.val().distance)
                     var newPoints = $('<td>').text(snapshot.val().points)
 
+
                     newRow.append(newDate);
                     newRow.append(newActivity);
+                    newRow.append(newLocation);
                     newRow.append(newDistance);
                     newRow.append(newPoints);
 
