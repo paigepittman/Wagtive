@@ -1,3 +1,6 @@
+body {
+	color: #868e96;
+}
 img {
 	width: 100%;
 }
@@ -8,13 +11,35 @@ input {
 }
 
 label {
-	color: #868e96;
+/*	color: #868e96;*/
 	font-size: 14px;
 }
 
 h2 {
-	color: #868e96;
 	font-size: 4vh;
+}
+
+h4 {
+	font-size: 3vh;
+}
+
+.modal-header, .modal-footer {
+	color: white;
+	background-color: #0D90E6;
+	height: 40px;
+}
+
+.modal-footer {
+	padding: 15px 0 15px 0;
+}
+
+#checkInModal .modal-footer {
+	background: transparent;
+}
+
+.checkInImage {
+	width: 80%;
+	margin-left: 10%
 }
 
 .form-control::placeholder {
@@ -72,39 +97,12 @@ h2 {
 }
 
 .dropdown-item {
-	color: #868e96;
+/*	color: #868e96;*/
 }
 
 .dropdown-item:hover {
 	color: white;
 	background-color: #aaa;
-}
-
-.tempContainer {
-	position: absolute;
-	width: 20vh;
-	height: 20vh;
-}
-
-.tempContainer:nth-child(1) {
-	left: 20vh;
-	top: 20vh;
-}
-
-
-.tempContainer:nth-child(2) {
-	right: 20vh;
-	top: 20vh;
-}
-
-.tempContainer:nth-child(3) {
-	left: 20vh;
-	top: 60vh;
-}
-
-.tempContainer:nth-child(4) {
-	right: 20vh;
-	top: 60vh;
 }
 
 #saveProfile {
@@ -117,7 +115,7 @@ h2 {
 }
 
 #stats {
-	color: #868e96;
+/*	color: #868e96;*/
 	font-size: 13px;
 }
 
@@ -127,6 +125,7 @@ h2 {
 
 #nameSpan {
 	font-size: 24px;
+	font-weight: bold;
 }
 
 #startActivity {
@@ -148,6 +147,10 @@ h2 {
 	height: 28px;
 }
 
+#pawmap {
+	width: 100%;
+}
+
 #llogo {
 	width: 100%;
 }
@@ -157,8 +160,16 @@ h2 {
 	height: 50px;
 }
 
+#level, #points {
+	font-size: 20px;
+}
+
 .tooltip {
 	font-size: 11px;
+}
+
+#activities {
+	font-size: 13px;
 }
 
 .nav-link {
@@ -171,4 +182,8 @@ h2 {
 
 .tempContainer button:hover a{
 	color: white;
+}
+#map{
+	height: 400px;
+	width: 100%;
 }
