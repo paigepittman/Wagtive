@@ -78,6 +78,5 @@ $(document).ready(function() {
 
     $("#logout").on("click", e => {
         auth.signOut();
-        location.replace('index.html')
     })
 })
